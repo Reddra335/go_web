@@ -1,0 +1,19 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If</title>
+</head>
+
+<body>
+    {{if ge .Angka 90}}
+    <h1>Hello {{.Name}}</h1>
+    {{else if ge .Angka 80}}
+    <h1>Hello bang {{.Name}}</h1>
+    {{else}}
+    <h1>Hello</h1>
+    {{end}}
+</body>
+
+</html>

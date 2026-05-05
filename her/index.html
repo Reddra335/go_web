@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Dashboard UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Bagian Kiri: Jam dan Quotes -->
+        <div class="left-panel">
+            <div class="widget time-widget">
+                <h1 id="time">00:00</h1>
+                <p id="date">Memuat tanggal...</p>
+            </div>
+
+            <div class="widget greeting-widget">
+                <h2 id="greeting">Selac:\Users\Reddra\Pictures\cetak berita\PXL_20240802_103933319~4.jpgt Pagi,</h2>
+                <p>Welcome to your personal dashboard.</p>
+            </div>
+
+            <div class="widget quote-widget">
+                <p id="quote">"System is booting up..."</p>
+                <span class="author">- UI System</span>
+            </div>
+        </div>
+
+        <!-- Bagian Kanan: Foto dengan Efek Glitch -->
+        <div class="right-panel">
+            <div class="widget profile-widget">
+                <div class="glitch-container">
+                    <!-- Ganti 'foto-dia.jpg' dengan nama file foto yang kamu siapkan -->
+                    <img src="uji2.jpeg" alt="Test Subject" class="glitch-img">
+                </div>
+                <div class="status">
+                    <span class="dot"></span>
+                    <p>Status: <span class="online"> Online</span></p>
+                </div>
+                <p class="test-label"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If</title>
+</head>
+
+<body>
+    {{range $index, $element :=.Name}}
+    <h1>Hello {{$element}}</h1>
+
+    {{else}}
+    <h1>Anda tidak punya hobi</h1>
+    {{end}}
+</body>
+
+</html>

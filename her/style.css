@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    background-color: #0a0a0c;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.dashboard {
+    display: flex;
+    gap: 20px;
+    max-width: 900px;
+    width: 90%;
+}
+
+
+/* Panel Layout */
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 2;
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+}
+
+
+/* Widget Styles */
+
+.widget {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.widget:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+
+/* Typography */
+
+#time {
+    font-size: 4.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+#date {
+    color: #888;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.greeting-widget h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.greeting-widget p {
+    color: #888;
+}
+
+.quote-widget {
+    font-style: italic;
+    border-left: 4px solid #4a90e2;
+}
+
+.quote-widget #quote {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.author {
+    color: #4a90e2;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+
+/* Profile & Glitch Effect */
+
+.profile-widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.glitch-container {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background: #000;
+}
+
+.glitch-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(80%) contrast(120%);
+    transition: filter 0.3s ease;
+}
+
+
+/* Glitch Animation on Hover */
+
+.glitch-container:hover .glitch-img {
+    filter: grayscale(0%) contrast(100%);
+    animation: glitch-anim 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
+
+@keyframes glitch-anim {
+    0% {
+        transform: translate(0)
+    }
+    20% {
+        transform: translate(-3px, 3px)
+    }
+    40% {
+        transform: translate(-3px, -3px)
+    }
+    60% {
+        transform: translate(3px, 3px)
+    }
+    80% {
+        transform: translate(3px, -3px)
+    }
+    100% {
+        transform: translate(0)
+    }
+}
+
+.glitch-container:hover::before,
+.glitch-container:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    pointer-events: none;
+}
+
+.glitch-container:hover::before {
+    background-color: rgba(255, 0, 0, 0.3);
+    mix-blend-mode: multiply;
+    animation: glitch-color-1 0.2s linear infinite;
+}
+
+.glitch-container:hover::after {
+    background-color: rgba(0, 255, 255, 0.3);
+    mix-blend-mode: multiply;
+    animation: glitch-color-2 0.3s linear infinite;
+}
+
+@keyframes glitch-color-1 {
+    0% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes glitch-color-2 {
+    0% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(-5px);
+    }
+}
+
+
+/* Status Indicator */
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00ff88;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff88;
+    animation: pulse 1.5s infinite;
+}
+
+.online {
+    color: #00ff88;
+}
+
+.test-label {
+    color: #555;
+    font-size: 0.8rem;
+    font-family: monospace;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+}

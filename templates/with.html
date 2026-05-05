@@ -1,0 +1,21 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If</title>
+</head>
+
+<body>
+    {{/*Komentar*/}}
+    <h1>{{.Name}}</h1>
+    {{with .Addres}}
+
+    <h1> {{.Jalan}}</h1>
+    <h1>{{.Kota}}</h1>
+    {{else}}
+    <h1>Anda tidak punya alamat</h1>
+    {{end}}
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+</head>
+
+<body>
+    <h1>Upload</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="name">
+            Name:<input type="text" name="name" id="name">
+        </label>
+        <label for="file">
+           File: <input type="file" name="file" id="file">
+        </label>
+        <input type="submit" value="upload">
+    </form>
+</body>
+
+</html>
